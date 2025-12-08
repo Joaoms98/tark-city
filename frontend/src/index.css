@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 120 40% 25%;
+    --foreground: 45 30% 90%;
+
+    --card: 30 25% 20%;
+    --card-foreground: 45 30% 90%;
+
+    --popover: 30 25% 15%;
+    --popover-foreground: 45 30% 90%;
+
+    --primary: 35 80% 50%;
+    --primary-foreground: 30 25% 10%;
+
+    --secondary: 30 30% 35%;
+    --secondary-foreground: 45 30% 90%;
+
+    --muted: 30 20% 30%;
+    --muted-foreground: 45 20% 70%;
+
+    --accent: 45 90% 55%;
+    --accent-foreground: 30 25% 10%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 45 30% 90%;
+
+    --border: 30 30% 40%;
+    --input: 30 25% 25%;
+    --ring: 35 80% 50%;
+
+    --radius: 0px;
+
+    /* Game-specific tokens */
+    --hud-background: 220 20% 12%;
+    --hud-border: 35 80% 50%;
+    --street-color: 220 10% 35%;
+    --building-shadow: 30 30% 15%;
+    --grass-light: 120 45% 30%;
+    --grass-dark: 120 40% 22%;
+  }
+
+  .dark {
+    --background: 120 40% 20%;
+    --foreground: 45 30% 90%;
+
+    --card: 30 25% 18%;
+    --card-foreground: 45 30% 90%;
+
+    --popover: 30 25% 12%;
+    --popover-foreground: 45 30% 90%;
+
+    --primary: 35 80% 50%;
+    --primary-foreground: 30 25% 10%;
+
+    --secondary: 30 30% 30%;
+    --secondary-foreground: 45 30% 90%;
+
+    --muted: 30 20% 25%;
+    --muted-foreground: 45 20% 65%;
+
+    --accent: 45 90% 55%;
+    --accent-foreground: 30 25% 10%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 45 30% 90%;
+
+    --border: 30 30% 35%;
+    --input: 30 25% 20%;
+    --ring: 35 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  body {
+    @apply bg-background text-foreground font-pixel;
+    font-family: 'Press Start 2P', cursive;
+  }
+}
+
+@layer utilities {
+  .pixel-shadow {
+    box-shadow: 
+      4px 4px 0 hsl(var(--building-shadow)),
+      8px 8px 0 hsl(var(--building-shadow) / 0.5);
+  }
+
+  .pixel-border {
+    border: 4px solid hsl(var(--border));
+    box-shadow: 
+      inset 2px 2px 0 hsl(var(--foreground) / 0.2),
+      inset -2px -2px 0 hsl(var(--building-shadow) / 0.5);
+  }
+
+  .hud-panel {
+    background: hsl(var(--hud-background));
+    border: 4px solid hsl(var(--hud-border));
+    box-shadow: 
+      inset 2px 2px 0 hsl(var(--hud-border) / 0.3),
+      inset -2px -2px 0 hsl(var(--hud-background)),
+      0 4px 0 hsl(0 0% 0% / 0.5);
+  }
+
+  .grass-pattern {
+    background: 
+      linear-gradient(90deg, hsl(var(--grass-light)) 2px, transparent 2px),
+      linear-gradient(hsl(var(--grass-dark)) 2px, transparent 2px),
+      hsl(var(--background));
+    background-size: 16px 16px;
+  }
+}
