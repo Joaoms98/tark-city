@@ -20,7 +20,7 @@ const GameHeader = () => {
               />
             </div>
             <span className="hidden sm:block text-xs md:text-sm text-primary font-pixel">
-              MAYOR
+              King George
             </span>
           </div>
 
@@ -36,14 +36,14 @@ const GameHeader = () => {
             <div className="flex items-center gap-2">
               <Users className="w-4 h-4 md:w-5 md:h-5 text-primary" />
               <span className="text-[10px] md:text-xs text-foreground">
-                Pop: <span className="text-primary">---</span>
+                Pop: <span className="text-primary">56</span>
               </span>
             </div>
             
             <div className="flex items-center gap-2">
               <Package className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />
               <span className="text-[10px] md:text-xs text-foreground">
-                Res: <span className="text-muted-foreground">---</span>
+                Res: <span className="text-muted-foreground">000</span>
               </span>
             </div>
           </div>

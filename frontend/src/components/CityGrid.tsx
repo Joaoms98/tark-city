@@ -3,6 +3,7 @@ import Building from "./Building";
 const CityGrid = () => {
   const cityRows = [
     [0, 1, 2, 3],
+    [0, 1, 2, 3],
   ];
 
   return (
