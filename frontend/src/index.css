@@ -6,10 +6,10 @@
 
 @layer base {
   :root {
-    --background: 120 40% 25%;
+    --background: 0 0% 0% / 0%;
     --foreground: 45 30% 90%;
 
-    --card: 30 25% 20%;
+    --card: 0 0% 0% / 0%;
     --card-foreground: 45 30% 90%;
 
     --popover: 30 25% 15%;
@@ -36,7 +36,6 @@
 
     --radius: 0px;
 
-    /* Game-specific tokens */
     --hud-background: 220 20% 12%;
     --hud-border: 35 80% 50%;
     --street-color: 220 10% 35%;
@@ -46,10 +45,10 @@
   }
 
   .dark {
-    --background: 120 40% 20%;
+    --background: 0 0% 0% / 0%;
     --foreground: 45 30% 90%;
 
-    --card: 30 25% 18%;
+    --card: 0 0% 0% / 0%;
     --card-foreground: 45 30% 90%;
 
     --popover: 30 25% 12%;
@@ -84,7 +83,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-pixel;
+    background-color: transparent !important;
+    @apply text-foreground font-pixel;
     font-family: 'Press Start 2P', cursive;
   }
 }
@@ -113,10 +113,9 @@
   }
 
   .grass-pattern {
-    background: 
-      linear-gradient(90deg, hsl(var(--grass-light)) 2px, transparent 2px),
-      linear-gradient(hsl(var(--grass-dark)) 2px, transparent 2px),
-      hsl(var(--background));
-    background-size: 16px 16px;
+    background-image: url("/src/assets/backgrounds/kingdom-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
